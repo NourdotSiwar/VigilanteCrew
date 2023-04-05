@@ -43,13 +43,13 @@ const CreateCrew = () => {
         console.log('Error inserting data:', error);
         }
 
-        //window.location = "/gallery";
+        window.location = "/gallery";
     }
  
     return (
         <div className='CreateCrewDiv'>
             <img className="Logo" src={logos} alt="Vigilante Crew Logo" />
-            <form>
+            <form onSubmit={createPost}>
 
             <div className='cardNames'>
             <div className='cardName'>
@@ -68,9 +68,9 @@ const CreateCrew = () => {
             <label>Gender:</label>
             <div className='choicesGender'>
             <input type="radio" id="genderM" name="gender" value="male"/>
-            <label htmlFor="genderM">Male</label>
+            <label htmlFor="genderM">male</label>
             <input type="radio" id="genderF" name="gender" value="female"/>
-            <label htmlFor="genderF">Female</label>
+            <label htmlFor="genderF">female</label>
             </div>
             </div>
 
@@ -84,19 +84,19 @@ const CreateCrew = () => {
 
         <label>Color:</label>
         <input type="radio" id="black" name="color" value="black" />
-        <label htmlFor="black">Black</label>
+        <label htmlFor="black">black</label>
         <input type="radio" id="blue" name="color" value="blue"/>
-        <label htmlFor="blue">Blue</label>
+        <label htmlFor="blue">blue</label>
         <input type="radio" id="red" name="color" value="red"/>
-        <label htmlFor="red">Red</label>
+        <label htmlFor="red">red</label>
         <input type="radio" id="green" name="color" value="green"/>
-        <label htmlFor="green">Green</label>
+        <label htmlFor="green">green</label>
         <input type="radio" id="orange" name="color" value="orange"/>
-        <label htmlFor="orange">Orange</label>
+        <label htmlFor="orange">orange</label>
         <input type="radio" id="purple" name="color" value="purple"/>
-        <label htmlFor="purple">Purple</label>
+        <label htmlFor="purple">purple</label>
         <input type="radio" id="yellow" name="color" value="yellow"/>
-        <label htmlFor="yellow">Yellow</label>
+        <label htmlFor="yellow">yellow</label>
 
         </div>
 
