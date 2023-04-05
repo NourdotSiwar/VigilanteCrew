@@ -10,9 +10,9 @@ const CreateCrew = () => {
 
         const name = document.getElementById('name').value;
         const codeName = document.getElementById('codeName').value;
-        const color = document.getElementById('color').value;
-        const gender = document.getElementById('gender').value;
-        const age = document.getElementById('age').value;
+        const color = document.querySelector('input[name="color"]:checked')?.value;
+        const gender= document.querySelector('input[name="gender"]:checked').value;
+        const age = parseInt(document.getElementById('age').value);
         const mainAbility = document.getElementById('mainAbility').value;
         const mainWeapon = document.getElementById('mainWeapon').value;
 
@@ -26,12 +26,24 @@ const CreateCrew = () => {
             age: age
         }
 
-        await supabase
+        console.log(post); 
+
+        try {
+        const { data, error } = await supabase
         .from('members')
         .insert(post)
         .select();
-    
-        window.location = "/gallery";
+
+        if (error) {
+        console.log('Error inserting data:', error);
+        } else {
+        console.log('Data inserted successfully:', data);
+        }
+        } catch (error) {
+        console.log('Error inserting data:', error);
+        }
+
+        //window.location = "/gallery";
     }
  
     return (
@@ -55,10 +67,10 @@ const CreateCrew = () => {
             <div className='cardGender'>
             <label>Gender:</label>
             <div className='choicesGender'>
-            <input type="radio" id="gender" name="gender" value="male"/>
-            <label htmlFor="male">Male</label>
-            <input type="radio" id="gender" name="gender" value="female"/>
-            <label htmlFor="female">Female</label>
+            <input type="radio" id="genderM" name="gender" value="male"/>
+            <label htmlFor="genderM">Male</label>
+            <input type="radio" id="genderF" name="gender" value="female"/>
+            <label htmlFor="genderF">Female</label>
             </div>
             </div>
 
@@ -68,23 +80,26 @@ const CreateCrew = () => {
             </div>
             </div>
 
-            <div className='cardColor'>
-            <label>Color:</label>
-            <input type="radio" id="color" name="color" value="black"/>
-            <label htmlFor="black">Black</label>
-            <input type="radio" id="color" name="color" value="blue"/>
-            <label htmlFor="blue">Blue</label>
-            <input type="radio" id="color" name="color" value="red"/>
-            <label htmlFor="red">Red</label>
-            <input type="radio" id="color" name="color" value="purple"/>
-            <label htmlFor="purple">Purple</label>
-            <input type="radio" id="color" name="color" value="orange"/>
-            <label htmlFor="orange">Orange</label>
-            <input type="radio" id="color" name="color" value="yellow"/>
-            <label htmlFor="yellow">Yellow</label>
-            <input type="radio" id="color" name="color" value="green"/>
-            <label htmlFor="green">Green</label>
-            </div>
+        <div className='cardColor'>
+
+        <label>Color:</label>
+        <input type="radio" id="black" name="color" value="black" />
+        <label htmlFor="black">Black</label>
+        <input type="radio" id="blue" name="color" value="blue"/>
+        <label htmlFor="blue">Blue</label>
+        <input type="radio" id="red" name="color" value="red"/>
+        <label htmlFor="red">Red</label>
+        <input type="radio" id="green" name="color" value="green"/>
+        <label htmlFor="green">Green</label>
+        <input type="radio" id="orange" name="color" value="orange"/>
+        <label htmlFor="orange">Orange</label>
+        <input type="radio" id="purple" name="color" value="purple"/>
+        <label htmlFor="purple">Purple</label>
+        <input type="radio" id="yellow" name="color" value="yellow"/>
+        <label htmlFor="yellow">Yellow</label>
+
+        </div>
+
 
             <div className='cardMains'>
 
