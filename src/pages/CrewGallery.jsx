@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../client';
 import { Link } from 'react-router-dom';
 import './CrewGallery.css';
+import logos from "../images/logos.png";
 
 const CrewGallery = () => {
 
@@ -21,6 +22,8 @@ const CrewGallery = () => {
     }, []);
     
     return (
+        <div className='galleryDiv'>
+             <img className="Logo" src={logos} alt="Vigilante Crew Logo" />
         <div className="CrewGallery">
             {
                 posts && posts.length > 0 ?
@@ -32,18 +35,19 @@ const CrewGallery = () => {
                 <h3>Main Ability: <span className='colorSpan'>{post.main_ability}</span></h3>
                 <h3>Main Weapon: <span className='colorSpan'>{post.main_weapon}</span></h3>
 
-                    <Link to={`/edit/${post.id}`}><button className='CrewGalleryCardButtons'>Edit</button></Link>
+                    <Link style={{color: 'white', textShadow: '0 0 2px white', textDecoration: 'none'}} to={`/edit/${post.id}`}><button className='CrewGalleryCardButtons'>Edit</button></Link>
                 </div>
                 ) : 
                 (
-                  <div>
-                      <h1>Your Crew is Empty!</h1>
-                      <h2><Link style={{color: 'white', textShadow: '0 0 2px white'}}
+                  <div className='emptyCrew'>
+                      <h2>Your Crew is Empty!</h2>
+                      <h2><Link style={{color: 'white', textShadow: '0 0 2px white', textDecoration: 'none'}}
                        to={'/create'}> Create a Vigilante Here</Link></h2>
                   </div>
               )}
             
-        </div>  
+        </div> 
+        </div> 
     );
 }
 

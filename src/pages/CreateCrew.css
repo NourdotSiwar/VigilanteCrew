@@ -28,7 +28,7 @@
       width: 100%;
       margin-left: 1rem;
       margin-right: 1rem;
-      border: 1px solid #d18e8e;
+      border: 1px solid #9ac5e9;;
       border-radius: 1rem;
 }
 
@@ -90,20 +90,21 @@ label {
       width: 50%;
       height: 3rem;
       border-radius: 1rem;
-      border: 1px solid #d18e8e;
+      border: 1px solid #9ac5e9;;
       font-size: 1.3rem;
-      text-shadow: 0px 0px 2px #d18e8e;
+      text-shadow: 0px 0px 2px #9ac5e9;;
 }
 
 .submitBtn:hover{
-      background-color: #d18e8e;
+      background-color: black;
       color: white;
       cursor: pointer;
 }
 
+
 label {
-      color: #d18e8e;
-      text-shadow: 0px 0px 2px #d18e8e;
+      color: #9ac5e9;;
+      text-shadow: 0px 0px 2px #9ac5e9;;
 }
 
 input {

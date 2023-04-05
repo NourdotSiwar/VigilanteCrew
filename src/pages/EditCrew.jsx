@@ -36,7 +36,7 @@ const EditCrew = () => {
             age: post.age,
         }).eq('id', id);
 
-        window.location = '/edit/' + id;
+        window.location = '/gallery';
     }
 
     const deletePost = async (e) => {
@@ -50,35 +50,31 @@ const EditCrew = () => {
     if (!post) {
         return <div>Loading...</div>;
     }
-    
+
     return (
-            
-            <div className='CreateCrewDiv'>
+    
+            <div className='CreateCrewDiv' >
             <img className="Logo" src={logos} alt="Vigilante Crew Logo" />
 
             <br></br>
-            <div className='CharacterInformation'>
             <h2>Character Information</h2>
+            <div className='charInfoDiv' style={{ '--card-shadow-color': post.color }}>
             <h3>
                 Name: <span className='colorSpan'>{post.name}</span>
                 <br></br>
                 Code Name: <span className='colorSpan'>{post.codename}</span>
-                <br></br>
-                Color: <span className='colorSpan'>{post.color}
-                </span>
-                <br></br>
-                Gender: <span className='colorSpan'>{post.gender}</span>
-                <br></br>
+                <div className='genderAgeDiv'>
+                Gender: <span className='colorSpan'>{post.gender} </span>
                 Age: <span className='colorSpan'>{post.age}</span>
-                <br></br>
+                </div>
                 Main Ability: <span className='colorSpan'>{post.main_ability}</span>
                 <br></br>
                 Main Weapon: <span className='colorSpan'>{post.main_weapon}</span>
             </h3>
             </div>
             <br></br>
-
             <form >
+
             <div className='cardNames'>
             <div className='cardName'>
             <label htmlFor="name">Name</label>
@@ -95,14 +91,12 @@ const EditCrew = () => {
             <div className='cardGender'>
             <label>Gender:</label>
             <div className='choicesGender'>
-            <input type="radio" id="genderM" name="gender" value="Male" checked={post.gender === 'male'} onChange={(e) => setPost({...post, gender:e.target.value})}/>
+            <input type="radio" id="genderM" name="gender" value="male" checked={post.gender === 'male'} onChange={(e) => setPost({...post, gender:e.target.value})}/>
             <label htmlFor="genderM">male</label>
             <input type="radio" id="genderF" name="gender" value="female" checked={post.gender === 'female'} onChange={(e) => setPost({...post, gender:e.target.value})} />
             <label htmlFor="genderF">female</label>
             </div>
             </div>
-
-
 
             <div className='cardAge'>   
             <input type="text" id="age" name="age" value={post.age} onChange={(e) => setPost({...post, age: e.target.value})} />
@@ -123,17 +117,15 @@ const EditCrew = () => {
             <label htmlFor="orange">orange</label>
             <input type="radio" id="purple" name="color" value="purple" checked={post.color === 'purple'} onChange={(e) => setPost({...post, color: e.target.value})} />
             <label htmlFor="purple">purple</label>
+            <input type="radio" id="yellow" name="color" value="yellow" checked={post.color === 'yellow'} onChange={(e) => setPost({...post, color: e.target.value})} />
+            <label htmlFor="yellow">yellow</label>
             </div>
 
-
-
             <div className='cardMains'>
-
             <div className='cardAbility'>
             <label htmlFor="mainAbility">Main Ability</label>
             <input type="text" id="mainAbility" name="mainAbility" value={post.main_ability} onChange={(e) => setPost({...post, main_ability: e.target.value})} />
             </div>
-
             <div className='cardWeapon'>
             <label htmlFor="mainWeapon">Main Weapon</label>
             <input type="text" id="mainWeapon" name="mainWeapon" value={post.main_weapon} onChange={(e) => setPost({...post, main_weapon: e.target.value})} />
@@ -142,9 +134,8 @@ const EditCrew = () => {
 
                 <br/>
                 <button className='updateBtn' onClick={updatePost}>Update Post</button>
+                <button className='deleteBtn' onClick={deletePost}>Delete Post</button>  
             </form>
-
-            <button className='deleteBtn' onClick={deletePost}>Delete Post</button>   
 </div>
     )
 }
