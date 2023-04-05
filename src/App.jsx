@@ -8,6 +8,7 @@ import EditCrew from './pages/EditCrew'
 import CrewGallery from './pages/CrewGallery'
 import Home from './pages/Home'
 import SideBar from './components/SideBar'
+import EmptyCrew from './pages/EmptyCrew'
 
 function App() {
 
@@ -28,6 +29,10 @@ function App() {
     {
       path: '/gallery',
       element: <CrewGallery />
+    },
+    {
+      path: '/emptyCrew',
+      element: <EmptyCrew />
     }
   ]);
 

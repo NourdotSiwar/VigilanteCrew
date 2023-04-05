@@ -3,11 +3,13 @@ import './CreateCrew.css'
 import { supabase } from '../client'
 import logos from "../images/logos.png";
 
+// This component is used to create a new crew member
 const CreateCrew = () => {
 
     const createPost = async (event) => {
         event.preventDefault();
 
+        // Get the values from the form
         const name = document.getElementById('name').value;
         const codeName = document.getElementById('codeName').value;
         const color = document.querySelector('input[name="color"]:checked')?.value;
@@ -16,6 +18,7 @@ const CreateCrew = () => {
         const mainAbility = document.getElementById('mainAbility').value;
         const mainWeapon = document.getElementById('mainWeapon').value;
 
+        // Create a new object with the values from the form
         const post = {
             name: name,
             codename: codeName,
@@ -26,9 +29,8 @@ const CreateCrew = () => {
             age: age
         }
 
-        console.log(post); 
-
         try {
+            // Insert the new object into the database
         const { data, error } = await supabase
         .from('members')
         .insert(post)
@@ -43,6 +45,7 @@ const CreateCrew = () => {
         console.log('Error inserting data:', error);
         }
 
+        // Redirect to the gallery page
         window.location = "/gallery";
     }
  

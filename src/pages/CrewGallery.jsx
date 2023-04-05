@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom';
 import './CrewGallery.css';
 import logos from "../images/logos.png";
 
+// This component is used to display the gallery of crew members
 const CrewGallery = () => {
 
+    // Set up state variables
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
 
+        // Fetch the crew members from the database
         const fetchPosts = async () => {
             const { data } = await supabase
             .from('members')
@@ -40,9 +43,7 @@ const CrewGallery = () => {
                 ) : 
                 (
                   <div className='emptyCrew'>
-                      <h2>Your Crew is Empty!</h2>
-                      <h2><Link style={{color: 'white', textShadow: '0 0 2px white', textDecoration: 'none'}}
-                       to={'/create'}> Create a Vigilante Here</Link></h2>
+                       {window.location = '/emptyCrew'}
                   </div>
               )}
             

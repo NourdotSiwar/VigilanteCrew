@@ -3,6 +3,8 @@ import "./Home.css";
 import BatFam from "../images/batfam.png";
 import logos from "../images/logos.png";
 
+// Home page component
+// This is the first page that the user sees when they visit the site
 const Home = () => {
       return (
           <div className="homeDiv">
