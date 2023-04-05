@@ -28,7 +28,7 @@
       width: 100%;
       margin-left: 1rem;
       margin-right: 1rem;
-      border: 1px solid #d18e8e;
+      border: 1px solid #9ac5e9;;
       border-radius: 1rem;
 }
 
@@ -43,10 +43,14 @@ input {
       outline: none;
       border-radius: 1rem;
       text-align: center; 
+      color: black;
+      font-size: 1.2rem; 
 }
 
 label {
       font-size: 1.5rem;
+      color: #9ac5e9;;
+      text-shadow: 0px 0px 2px #9ac5e9;;
 }
 
 .cardNames{
@@ -84,35 +88,59 @@ label {
       margin-left: 50px;
 }
 
-.submitBtn{
-      color: black;
-      background-color: white;
-      width: 50%;
-      height: 3rem;
+.charInfoDiv{
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px var(--card-shadow-color);
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 50%; /* Decrease the width to make it narrower */
+      margin: 0 auto; /* Add this line to center the div horizontally */
+      margin-top: 2rem;
+      border: 1px solid #9ac5e9;;
       border-radius: 1rem;
-      border: 1px solid #d18e8e;
-      font-size: 1.3rem;
-      text-shadow: 0px 0px 2px #d18e8e;
+      text-align: left;
+      padding-left: 3rem;
+    }
+    
+
+.colorSpan{
+      color: var(--card-shadow-color);
 }
 
-.submitBtn:hover{
-      background-color: #d18e8e;
+.genderAgeDiv span{
+      display: inline-block;
+      margin-right: 50px;
+}
+
+.updateBtn,
+.deleteBtn {
+  display: inline-block;
+  margin-right: 10px;
+  color: black;
+  background-color: white;
+  width: 50%;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid #9ac5e9;;
+  font-size: 1.3rem;
+  text-shadow: 0px 0px 2px #9ac5e9;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 0.5rem;
+
+}
+
+.updateBtn:hover{
+      background-color: black;
       color: white;
       cursor: pointer;
 }
 
-label {
-      color: #d18e8e;
-      text-shadow: 0px 0px 2px #d18e8e;
-}
-
-input {
-      color: black;
-      font-size: 1.2rem; 
+.deleteBtn:hover{
+      background-color: red;
+      color: white;
+      cursor: pointer;
 }
 
 
-
-
-
-    
