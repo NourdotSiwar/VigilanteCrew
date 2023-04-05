@@ -34,14 +34,12 @@ const CrewGallery = () => {
 
                     <Link to={`/edit/${post.id}`}><button className='CrewGalleryCardButtons'>Edit</button></Link>
                 </div>
-
-
                 ) : 
                 (
                   <div>
                       <h1>Your Crew is Empty!</h1>
                       <h2><Link style={{color: 'white', textShadow: '0 0 2px white'}}
-                       to="/create">Create a Vigilante Here</Link></h2>
+                       to={'/create'}> Create a Vigilante Here</Link></h2>
                   </div>
               )}
             
