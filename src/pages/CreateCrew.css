@@ -1,0 +1,119 @@
+.Logo{
+      width: 30rem;
+      height: 15rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+}
+
+.CreateCrewDiv{
+      width: 50rem;
+      flex: display;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 20rem;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      font-size: large;
+}
+
+/* make a card for each element*/
+.cardName, .cardCodeName, .cardColor, .cardGender,
+.cardAbility, .cardWeapon, .cardAge {
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border: 1px solid #d18e8e;
+      border-radius: 1rem;
+}
+
+input {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+      border-radius: 1rem;
+      text-align: center; 
+}
+
+label {
+      font-size: 1.5rem;
+}
+
+.cardNames{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+}
+
+.cardColor{
+      width: 91%;
+      display: flex;
+      flex-direction: row;
+}
+
+.cardInfo{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+}
+
+.cardMains{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+}
+
+.choicesGender{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-right: 10%;
+}
+
+.choicesGender input {
+      margin-left: 50px;
+}
+
+.submitBtn{
+      color: black;
+      background-color: white;
+      width: 50%;
+      height: 3rem;
+      border-radius: 1rem;
+      border: 1px solid #d18e8e;
+      font-size: 1.3rem;
+}
+
+.submitBtn:hover{
+      background-color: #d18e8e;
+      color: white;
+      cursor: pointer;
+}
+
+label {
+      color: #d18e8e;
+}
+
+input {
+      color: black;
+      font-size: 1rem; 
+}
+
+
+
+
+
+
+
+
+    

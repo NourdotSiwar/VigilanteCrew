@@ -1,0 +1,28 @@
+.sideBarDiv
+{
+      text-align: left;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 15%;
+      overflow: auto;
+      font-size: 0.5rem;
+      padding-top: 5rem;
+      padding-bottom: 15px;
+      padding-left: 50px;
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.849);
+      text-shadow: 0 0 10px #ffffff80;
+}
+
+.sideBarDiv:hover{
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      color: white;
+      background-color: rgba(0, 0, 0, 0.849);
+}
