@@ -4,28 +4,44 @@ import './EditCrew.css'
 import { supabase } from '../client'
 import logos from "../images/logos.png";
 
+// This component is used to edit a crew member
 const EditCrew = () => {
 
+    // Get the id from the url
     const {id} = useParams();
+
+    // Set up state variables
     const [post, setPost] = React.useState(null);
 
+    // Fetch the crew member from the database
     React.useEffect(() => {
         const fetchPost = async () => {
+
+            // data is an array of objects
             const {data} = await supabase
+
+            // from table called members
             .from('members')
+
+            // select all columns
             .select()
+
+            // where the id is equal to the id in the url
             .eq('id', id)
         
+            // order by created_at in ascending order
             if(data.length > 0) {
                 setPost(data[0]);
             }
         }
         fetchPost().catch(console.error);
+        
     }, [id]);
 
     const updatePost = async (e) => {
         e.preventDefault();
 
+        // Update the crew member in the database
         await supabase.from('members').update({
             name: post.name,
             codename: post.codename,
@@ -36,17 +52,21 @@ const EditCrew = () => {
             age: post.age,
         }).eq('id', id);
 
+        // Redirect to the gallery page
         window.location = '/gallery';
     }
 
     const deletePost = async (e) => {
         e.preventDefault();
 
+        // Delete the crew member from the database
         await supabase.from('members').delete().eq('id', id);
 
+        // Redirect to the gallery page
         window.location = '/gallery';
     }
 
+    // If the post is null, show a loading message
     if (!post) {
         return <div>Loading...</div>;
     }
