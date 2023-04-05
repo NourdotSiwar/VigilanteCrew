@@ -43,7 +43,9 @@ const CrewGallery = () => {
                 ) : 
                 (
                   <div className='emptyCrew'>
-                       {window.location = '/emptyCrew'}
+                       <h1>Your Crew is Empty!</h1>
+                    <h2><Link style={{color: 'white', textShadow: '0 0 2px white', textDecoration: 'none'}}
+                                to={'/create'}> Create a Vigilante Here</Link></h2>
                   </div>
               )}
             
