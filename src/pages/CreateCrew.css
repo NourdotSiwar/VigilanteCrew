@@ -92,6 +92,7 @@ label {
       border-radius: 1rem;
       border: 1px solid #d18e8e;
       font-size: 1.3rem;
+      text-shadow: 0px 0px 2px #d18e8e;
 }
 
 .submitBtn:hover{
@@ -102,11 +103,12 @@ label {
 
 label {
       color: #d18e8e;
+      text-shadow: 0px 0px 2px #d18e8e;
 }
 
 input {
       color: black;
-      font-size: 1rem; 
+      font-size: 1.2rem; 
 }
 
 
